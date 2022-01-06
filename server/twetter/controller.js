@@ -3,7 +3,6 @@ const { T } = require("./config");
 const getTrends = (res) => {
     T.get("trends/place", { id: '23424852', count: 100 }, (err, data, _) => {
         const { trends, locations } = data[0];
-        console.log(locations);
         res.send(trends);
     });
 }

@@ -5,6 +5,7 @@ import Map from '../Map';
 export default function Trends({ center }) {
     const [trends, setTrends] = useState([]);
     const [byTrend, setByTrend] = useState([]);
+    
     useEffect(() => {
         getTrends()
             .then(trends => {

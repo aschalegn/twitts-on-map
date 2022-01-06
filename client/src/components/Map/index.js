@@ -2,8 +2,10 @@ import React from 'react'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 
 export default function Map({ center, tweets }) {
-    const adressToLonLang = adress => { 
-        
+    const adressToLonLang = async adress => {
+        const lanlog = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${adress}&key=${process.env.REACT_APP_GOOGLEMAP_API}`)
+        const obj = await lanlog.json();
+        console.log(obj);
     }
 
     return (
@@ -24,10 +26,9 @@ export default function Map({ center, tweets }) {
                     </Popup>
                 </Marker>
                 {tweets.map(tweet => {
-                    console.log(tweet.user.location);
-                    <Marker position={tweet.user.location ? tweet.user.location : ''}>
-
-                    </Marker>
+                    // console.log(tweet.user.location);
+                    { adressToLonLang(tweet.user.location ? tweet.user.location : '') }
+                    // return (<Marker positiotweet.user.locationn={tweet.user.location ? tweet.user.location : ''}> </Marker>)
                 })}
             </MapContainer>
         </div>

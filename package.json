@@ -1,0 +1,27 @@
+{
+  "name": "tweet_map",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "",
+    "server": "cd server && npm run dev",
+    "client": "cd client && yarn start",
+    "dev": "concurrently \"npm run server\" \" npm run client\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aschalegn/twitts-on-map.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aschalegn/twitts-on-map/issues"
+  },
+  "homepage": "https://github.com/aschalegn/twitts-on-map#readme",
+  "dependencies": {
+    "concurrently": "^7.0.0"
+  }
+}
